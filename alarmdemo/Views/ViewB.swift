@@ -6,7 +6,6 @@ struct ViewB: View {
     @State private var alarmsBools: [Bool] = []
 
     init() {
-        // Initialize arrays from DataService
         _alarmsArr = State(initialValue: data.getAlarms())
         _alarmsBools = State(initialValue: data.getAlarmBools())
     }
