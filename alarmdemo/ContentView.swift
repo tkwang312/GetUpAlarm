@@ -1,21 +1,30 @@
-//
-//  ContentView.swift
-//  alarmdemo
-//
-//  Created by Tony Wang on 2024-10-10.
-//
-
 import SwiftUI
 
+
 struct ContentView: View {
+    @StateObject var timeExample = TimeExample()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            TabView {
+                ViewA().tabItem {
+                    Image(systemName: "timer")
+                    Text("Clock")
+                }
+                ViewB().tabItem {
+                    Image(systemName: "alarm")
+                    Text("Alarm")
+                }
+                ViewC().tabItem {
+                    Image(systemName: "stopwatch")
+                    Text("Stopwatch")
+                }
+                ViewD().tabItem {
+                    Image(systemName: "gearshape")
+                    Text("Settings")
+                }
+            }
         }
-        .padding()
     }
 }
 
